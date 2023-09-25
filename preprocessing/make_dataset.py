@@ -16,6 +16,7 @@ import argparse
 import click
 import mne 
 import pandas as pd
+import numpy as np
 
 raw_data_path = "../data/raw/"
 datasets_path = "../data/datasets"
@@ -39,18 +40,68 @@ def make_dir_structure(name):
     os.mkdir(os.path.join(new_dataset_path, "feature_selected"))
 
 def preprocess(filepath, output_name, dataset_name):
+
     # open filepath with mne
     raw = mne.io.read_raw_eeglab(filepath, preload=True)
     # process raw_mne
+
+    #Was test
+    #mne.export.export_raw("analyze.edf", raw)
+
+    #def need to remove power line noise at 50Hz
+
     print(raw.info)
-    raw_filtered = raw.copy().filter(l_freq=1, h_freq=30)
+    raw_powerline = raw.copy().notch_filter(freqs=50, notch_widths=1)
+
+    raw_filtered = raw_powerline.copy().filter(l_freq=1, h_freq=249)
+    
+    #raw_powerline = raw.copy().notch_filter(freqs=50, notch_widths=1)
+
+    # ^ remove band pass filter and or make a copy for doing ICA and then apply to non band pass 
     
     # ica to remove heartbeats 
     ica = mne.preprocessing.ICA(n_components=20, random_state=97, max_iter=800)
-    ica.fit(raw)
-    ecg_inds, ecg_scores = ica.find_bads_ecg(raw, ch_name='ECG1')  
-    ica.apply(raw, exclude=ecg_inds)
+    ica.fit(raw_filtered)
+    ecg_inds, ecg_scores = ica.find_bads_ecg(raw_powerline, ch_name='ECG1')  
+    ica.apply(raw_powerline, exclude=ecg_inds)
 
+    #TODO
+    #base line correction 1/4 average / per epoch basis 
+    # demeaning 
+    # common average referencing 
+    # average referencing
+    #raw_powerline.set_eeg_reference(ref_channels="average")
+
+    raw_powerline.set_eeg_reference(ref_channels="average")
+    '''
+    # Demean the data
+    for i in range(len(raw_powerline.ch_names)):
+        # Select the data for the current channel
+        data, times = raw_powerline[i, :]
+
+        # Subtract the mean of the channel's data from each time point
+        demeaned_data = data - data.mean()
+
+        # Replace the channel's data in the Raw object with the demeaned data
+        raw_powerline._data[i, :] = demeaned_data
+    '''
+    # demeaning with moving average
+    window_size = 50  # Arbitrary value -- might want it to be larger 
+
+    if window_size % 2 == 0:
+        window_size += 1
+    n_channels = len(raw_powerline.ch_names)
+
+    for i in range(n_channels):
+        data, times = raw_powerline[i, :]
+        data = data.flatten()  # Flatten the data array
+        padding = window_size // 2
+        padded_data = np.pad(data, (padding, padding), mode='edge')
+        moving_avg = np.convolve(padded_data, np.ones(window_size) / window_size, mode='valid')
+        demeaned_data = data - moving_avg
+        raw_powerline._data[i, :] = demeaned_data  
+
+    # output data
     data, times = raw[:, :]
     channel_names = raw.info['ch_names']
     df = pd.DataFrame(data.T, columns=channel_names)
