@@ -36,4 +36,5 @@ def create_short_identifier(file_path):
     filename = segments[-1]
     return f"{shorten_segment(sub_segment)}_{shorten_segment(ses_segment)}_{shorten_segment(filename)}"
 ################################################################
+# get all csvs in files 
 ################################################################
