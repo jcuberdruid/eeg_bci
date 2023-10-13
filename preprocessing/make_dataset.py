@@ -36,10 +36,12 @@ def make_dir_structure(name):
             os.mkdir(new_dataset_path)
         else:
             exit(1)
+    else:
+        os.mkdir(new_dataset_path)
     os.mkdir(os.path.join(new_dataset_path, "processed"))
     os.mkdir(os.path.join(new_dataset_path, "feature_selected"))
 
-def preprocess(filepath, output_name, dataset_name):
+def preprocess(filepath, output_name, dataset_name, epoch_length=5):
 
     # open filepath with mne
     raw = mne.io.read_raw_eeglab(filepath, preload=True)
@@ -100,13 +102,37 @@ def preprocess(filepath, output_name, dataset_name):
         moving_avg = np.convolve(padded_data, np.ones(window_size) / window_size, mode='valid')
         demeaned_data = data - moving_avg
         raw_powerline._data[i, :] = demeaned_data  
-
+    '''
     # output data
     data, times = raw[:, :]
     channel_names = raw.info['ch_names']
     df = pd.DataFrame(data.T, columns=channel_names)
     output_path = os.path.join(datasets_path, dataset_name,'processed', output_name+".csv")
     df.to_csv(output_path, index=False)
+    '''
+    # Get the sampling rate
+    sfreq = raw.info['sfreq']
+    # Calculate the number of points in each epoch
+    points_per_epoch = int(epoch_length * sfreq)
+    # Calculate the total number of epochs
+    num_epochs = len(raw.times) // points_per_epoch
+
+    # Get channel names
+    channel_names = raw.ch_names
+
+    for epoch_num in range(num_epochs):
+        # Calculate start and end points for the epoch
+        start = epoch_num * points_per_epoch
+        end = (epoch_num + 1) * points_per_epoch
+
+        # Extract epoch data
+        data, times = raw[:, start:end]
+        df = pd.DataFrame(data.T, columns=channel_names)
+
+        # Save each epoch as a separate CSV file
+        epoch_output_name = f"{output_name}_E{epoch_num+1}.csv"
+        output_path = os.path.join(datasets_path, dataset_name, 'processed', epoch_output_name)
+        df.to_csv(output_path, index=False)
 
 
 #Fp1,Fz,F3,F7,FT9,FC5,FC1,C3,T7,ECG1,CP5,CP1,Pz,P3,P7,O1,Oz,O2,P4,P8,TP10,CP6,CP2,FCz,C4,T8,FT10,FC6,FC2,F4,F8,Fp2,AF7,AF3,AFz,F1,F5,FT7,FC3,C1,C5,TP7,CP3,P1,P5,PO7,PO3,POz,PO4,PO8,P6,P2,CPz,CP4,TP8,C6,C2,FC4,FT8,F6,AF8,AF4,F2
@@ -114,22 +140,17 @@ def preprocess(filepath, output_name, dataset_name):
 
 def compute_fft_on_csv(input_csv_path, output_csv_path):
     df = pd.read_csv(input_csv_path)
-    df_fft = pd.DataFrame()  # DataFrame to store FFT results
+    df_fft = pd.DataFrame()  
 
     for column in df.columns:
-        # Skip non-numeric columns
         if not np.issubdtype(df[column].dtype, np.number):
             continue
 
-        # Convert the column to floats and create a NumPy array
         waveform = df[column].values.astype(float)
-
         sampling_rate = 500  # Sampling rate in Hz
         num_samples = len(waveform)
         frequencies = np.fft.fftfreq(num_samples, 1/sampling_rate)
         fft_values = np.fft.fft(waveform)
-
-        # Compute magnitude of FFT values and keep only the positive frequencies
         fft_magnitudes = np.abs(fft_values)
         positive_freq_idxs = np.where(frequencies > 0)
         df_fft[column] = fft_magnitudes[positive_freq_idxs]
@@ -143,22 +164,24 @@ def main():
         name = args.dataset_name
     else:
         name = "dataset_1"
-    '''
+    print(f"Making dataset: {name}...")
     #make directory structure of for dataset 
     make_dir_structure(name)
 
     #get raw file paths
     raw_file_paths = ut.find_files_with_ext(".set", raw_data_path)
-
+    
+    print(f"Preprocessing...")
     for x in raw_file_paths:
         print(x)
         preprocess(x, ut.create_short_identifier(x), name) 
-    ''' 
     fft_input = os.path.join(datasets_path, name,'processed')
     processed_waveforms = ut.find_files_with_ext(".csv", fft_input)
 
+    print(f"Making FFTs...")
     for x in processed_waveforms:
         fft_output = os.path.join(datasets_path, name,'feature_selected', os.path.basename(x))
         compute_fft_on_csv(x, fft_output)
 
+    print(f"annnndddd Done.")
 main()

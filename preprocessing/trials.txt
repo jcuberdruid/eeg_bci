@@ -1,0 +1,205 @@
+Reading /home/jason/eeg_bci/src/preprocessing/../data/raw/sub-01/ses-S2/eeg/oneBACK.fdt
+Reading 0 ... 198062  =      0.000 ...   396.124 secs...
+Used Annotations descriptions: ['611', '6111', '6112', '6121', '6122', '6131', '6132', 'boundary']
+Event (boundary): 2.658 seconds
+Event ( Block Start): 6.030 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.528 seconds
+Event ( Correct Response): 1.988 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 0.636 seconds
+Event ( Error Response): 1.880 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.610 seconds
+Event ( Correct Response): 1.906 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.392 seconds
+Event ( Correct Response): 2.124 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.400 seconds
+Event ( Correct Response): 2.116 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.438 seconds
+Event ( Correct Response): 2.078 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.542 seconds
+Event ( Correct Response): 1.976 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.378 seconds
+Event ( Correct Response): 2.138 seconds
+Event ( Hit Trial Onset): 0.406 seconds
+Event ( Correct Response): 2.110 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.438 seconds
+Event ( Correct Response): 2.078 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.544 seconds
+Event ( Correct Response): 1.974 seconds
+Event ( Hit Trial Onset): 0.776 seconds
+Event ( Correct Response): 1.740 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.768 seconds
+Event ( Correct Response): 1.750 seconds
+Event ( Hit Trial Onset): 0.650 seconds
+Event ( Correct Response): 1.866 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.322 seconds
+Event ( Correct Response): 2.196 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.408 seconds
+Event ( Correct Response): 2.108 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.304 seconds
+Event ( Correct Response): 2.232 seconds
+Event ( Block End): 3.740 seconds
+Event ( Block Start): 6.032 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.380 seconds
+Event ( Correct Response): 2.136 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.478 seconds
+Event ( Correct Response): 2.038 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.452 seconds
+Event ( Correct Response): 2.064 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.726 seconds
+Event ( Correct Response): 1.790 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 0.670 seconds
+Event ( Error Response): 1.846 seconds
+Event ( Hit Trial Onset): 0.474 seconds
+Event ( Correct Response): 2.044 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.726 seconds
+Event ( Correct Response): 1.790 seconds
+Event ( Hit Trial Onset): 0.674 seconds
+Event ( Correct Response): 1.842 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.872 seconds
+Event ( Correct Response): 1.644 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.458 seconds
+Event ( Correct Response): 2.058 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.630 seconds
+Event ( Correct Response): 1.886 seconds
+Event ( Hit Trial Onset): 0.532 seconds
+Event ( Correct Response): 1.984 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.612 seconds
+Event ( Correct Response): 1.904 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.612 seconds
+Event ( Correct Response): 1.906 seconds
+Event ( Hit Trial Onset): 0.332 seconds
+Event ( Correct Response): 2.184 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.906 seconds
+Event ( Correct Response): 1.610 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.704 seconds
+Event ( Correct Response): 1.830 seconds
+Event ( Block End): 3.644 seconds
+Event ( Block Start): 6.030 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.622 seconds
+Event ( Correct Response): 1.894 seconds
+Event ( Hit Trial Onset): 0.410 seconds
+Event ( Correct Response): 2.108 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.428 seconds
+Event ( Correct Response): 2.090 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.404 seconds
+Event ( Correct Response): 2.114 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.486 seconds
+Event ( Correct Response): 2.030 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.312 seconds
+Event ( Correct Response): 2.204 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.574 seconds
+Event ( Correct Response): 1.942 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.528 seconds
+Event ( Correct Response): 1.988 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.424 seconds
+Event ( Correct Response): 2.094 seconds
+Event ( Hit Trial Onset): 0.626 seconds
+Event ( Correct Response): 1.890 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 0.510 seconds
+Event ( Error Response): 2.006 seconds
+Event ( Hit Trial Onset): 0.438 seconds
+Event ( Correct Response): 2.080 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.510 seconds
+Event ( Correct Response): 2.008 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Hit Trial Onset): 0.378 seconds
+Event ( Correct Response): 2.140 seconds
+Event ( Hit Trial Onset): 0.580 seconds
+Event ( Correct Response): 1.936 seconds
+Event ( Normal Trial Onset): 2.516 seconds
+Event ( Normal Trial Onset): 2.518 seconds
+Event ( Hit Trial Onset): 0.486 seconds
+Event ( Correct Response): 2.040 seconds
+Event ( Block End): 5.546 seconds
+Event ( End): 0.000 seconds
