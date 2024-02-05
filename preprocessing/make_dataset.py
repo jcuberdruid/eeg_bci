@@ -87,8 +87,8 @@ def preprocess(filepath, output_name, dataset_name, epoch_length=5):
         # Replace the channel's data in the Raw object with the demeaned data
         raw_powerline._data[i, :] = demeaned_data
     '''
-    # demeaning with moving average
-    window_size = 50  # Arbitrary value -- might want it to be larger 
+    #demeaning with moving average
+    window_size = 50  #arbitrary value -- might want it to be larger 
 
     if window_size % 2 == 0:
         window_size += 1
@@ -96,7 +96,7 @@ def preprocess(filepath, output_name, dataset_name, epoch_length=5):
 
     for i in range(n_channels):
         data, times = raw_powerline[i, :]
-        data = data.flatten()  # Flatten the data array
+        data = data.flatten()  
         padding = window_size // 2
         padded_data = np.pad(data, (padding, padding), mode='edge')
         moving_avg = np.convolve(padded_data, np.ones(window_size) / window_size, mode='valid')

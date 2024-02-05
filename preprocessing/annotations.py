@@ -3,6 +3,10 @@ import numpy as np
 
 raw = mne.io.read_raw_eeglab('../data/raw/sub-01/ses-S2/eeg/oneBACK.set', preload=True)
 events, event_id = mne.events_from_annotations(raw)
+
+print(event_id)
+exit()
+
 sampling_rate = 500  
 durations = np.diff(events[:, 0], append=events[-1, 0]) / sampling_rate
 
@@ -17,7 +21,6 @@ code_dict = {
     '6133': ' Conflict Error',
     '611': ' End'
 }
-
 
 for event, duration in zip(events, durations):
     description = [k for k, v in event_id.items() if v == event[2]][0]
